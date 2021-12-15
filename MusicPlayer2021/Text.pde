@@ -1,4 +1,4 @@
-/* Example Subprogram
+/* Example Subprogram from Drawing Program
  Purpose: to reuse code by passing parameters to voids (void does not return)
  Reason: simplifies code, no more copying and pasting code to reuse
  Reminder: design of parameters are important, here string and size are passed only
@@ -9,7 +9,7 @@
 PFont font; //Font Type
 int initialSize = 55; //Initial Size
 //Black Ink, see QuitButton Global Variables
-color white=#FFFFFF; //reset INK
+color white=#FFFFFF, black=#000000; //reset INK
 
 void textSetup() {
   //println("Start of Console");

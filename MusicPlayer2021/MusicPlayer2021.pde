@@ -3,10 +3,16 @@
 void setup() {
   fullScreen();
   population();
+  textSetup();
 }//End setup()
 
-void draw() {}//End draw()
+void draw() {
+  powerButtonDraw();
+}//End draw()
 
-void keyPressed() {}//Endkey Pressed()
+void keyPressed() {
+}//End keyPressed()
 
-void mousePressed() {}//End mousePressed()
+void mousePressed() {
+  powerButtonMousePressed();
+}//End mousepressed()
