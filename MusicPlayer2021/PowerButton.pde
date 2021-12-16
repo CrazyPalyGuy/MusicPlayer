@@ -5,10 +5,10 @@ float powerButtonX, powerButtonY, powerButtonWidth, powerButtonHeight;
 //
 void powerButton() {
   //Population
-  powerButtonX = width*29/32;
-  powerButtonY = height*0/16;
-  powerButtonWidth = width*3/32;
-  powerButtonHeight = height*1/16;
+  powerButtonX = displayWidth*29/32;
+  powerButtonY = displayHeight*0/16;
+  powerButtonWidth = displayWidth*3/32;
+  powerButtonHeight = displayHeight*1/16;
 }//End powerButton()
 //
 void powerButtonDraw() {
