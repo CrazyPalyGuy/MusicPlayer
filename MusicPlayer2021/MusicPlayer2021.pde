@@ -22,6 +22,11 @@ void setup() {
 
 void draw() {
   powerButtonDraw();
+  //
+  if ( song1.isLooping() ) {
+  println ("Is Looping");
+  println ( song1.loopCount() );
+  }
 }//End draw()
 
 void keyPressed() {
@@ -57,6 +62,9 @@ void keyPressed() {
       song1.mute();
     }
   }
+  //Loop Function
+  int LoopIntNum = 2; //Loop Hardcode
+  if ( key == 'l' || key == 'L' ) song1.loop(LoopIntNum); //PlayButton
 }//End keyPressed()
 
 void mousePressed() {
