@@ -8,7 +8,9 @@ import ddf.minim.ugens.*;
 
 //Global Variables
 Minim minim; //creates object to access all functions
-AudioPlayer song1; //creates "Play List" variable holding extensions WAV, AIFF, AU, SND, and MP3
+int numberOfSongs = 3;
+AudioPlayer[] song = new AudioPlayer[numberOfSongs]; //creates "Play List" variable holding extensions WAV, AIFF, AU, SND, and MP3
+int currentSong = numberOfSongs - numberOfSongs; //Current song is 0
 
 void setup() {
   fullScreen();
@@ -16,25 +18,27 @@ void setup() {
   textSetup();
   //
   minim = new Minim(this); //load from data directory, loadFile should also load from project folder, like loadImage
-  song1 = minim.loadFile("Music/Y2Mate.is - Geometry Dash All Songs (1 - 20)-030aTu_B_X4-160k-1641915861454.mp3"); //able to pass absolute path, file name, and URL
+  song[currentSong] = minim.loadFile("Music/Y2Mate.is - Geometry Dash All Songs (1 - 20)-030aTu_B_X4-160k-1641915861454.mp3"); //able to pass absolute path, file name, and URL
+  song[currentSong+1] = minim.loadFile("Music/yt5s.com-Hello bozo-(480p).mp4");
+  song[currentSong+2] = minim.loadFile("Music/yt5s.com-Runaway (Kanye West)   Coney Island Bing Bong - Mashup .mp4");
   //song1.play(); //Parameter is milli-seconds from start of audio file to start playing
 }//End setup()
 
 void draw() {
   powerButtonDraw();
   //
-  if ( song1.isLooping() ) {
-  println ("Is Looping");
-  println ( song1.loopCount() );
-  }
 }//End draw()
 
 void keyPressed() {
-  //PlayPause
+  currentSong ++; // = currentSong + 1, += 1
+  if ( key == 'l' || key == 'L') song[currentSong].loop(0); //Parameter is Parameter is number of repeats
+}//End keyPressed()
+
+/*//PlayPause
   if (key == 'p') {
     if ( song1.isPlaying() ) {
       song1.pause();
-    } else if ( song1.position() >= song1.length()-3000) {
+    } else if ( song1.position() >= song1.length()-3000 ) {
       song1.pause();
       song1.rewind();
     } else {
@@ -50,7 +54,7 @@ void keyPressed() {
       song1.rewind();
     }
   }
-  //FastForward
+  //Fast Forward
   if (key == 'f') song1.skip(1000);
   //Fast Rewind
   if (key == 'r') song1.skip(-1000);
@@ -63,10 +67,9 @@ void keyPressed() {
     }
   }
   //Loop Function
-  int LoopIntNum = 2; //Loop Hardcode
-  if ( key == 'l' || key == 'L' ) song1.loop(LoopIntNum); //PlayButton
-}//End keyPressed()
-
+  int loopIntNum = 2; //Loop Hardcode
+  if ( key == 'l' || key == 'L' ) song1.loop(loopIntNum); //Play Button
+  */
 void mousePressed() {
   powerButtonMousePressed();
 }//End mousepressed()
