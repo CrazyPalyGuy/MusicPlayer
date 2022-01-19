@@ -8,7 +8,7 @@ import ddf.minim.ugens.*;
 
 //Global Variables
 Minim minim; //creates object to access all functions
-int numberOfSongs = 3;
+int numberOfSongs = 2;
 AudioPlayer[] song = new AudioPlayer[numberOfSongs]; //creates "Play List" variable holding extensions WAV, AIFF, AU, SND, and MP3
 int currentSong = numberOfSongs - numberOfSongs; //Current song is 0
 
@@ -19,8 +19,7 @@ void setup() {
   //
   minim = new Minim(this); //load from data directory, loadFile should also load from project folder, like loadImage
   song[currentSong] = minim.loadFile("Music/Y2Mate.is - Geometry Dash All Songs (1 - 20)-030aTu_B_X4-160k-1641915861454.mp3"); //able to pass absolute path, file name, and URL
-  song[currentSong+1] = minim.loadFile("Music/yt5s.com-Hello bozo-(480p).mp4");
-  song[currentSong+2] = minim.loadFile("Music/yt5s.com-Runaway (Kanye West)   Coney Island Bing Bong - Mashup .mp4");
+  song[currentSong+1] = minim.loadFile("Music/Geometry Dash Level 2 - Back On Track.mp3");
   //song1.play(); //Parameter is milli-seconds from start of audio file to start playing
 }//End setup()
 
